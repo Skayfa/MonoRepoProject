@@ -17,7 +17,7 @@ export type Scalars = {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  addSet?: Maybe<Set>;
+  addSet: Set;
 };
 
 
@@ -29,21 +29,21 @@ export type MutationAddSetArgs = {
 
 export type Query = {
   __typename?: 'Query';
-  allSets?: Maybe<Array<Maybe<Set>>>;
+  allSets: Array<Maybe<Set>>;
 };
 
 export type Set = {
   __typename?: 'Set';
   id: Scalars['Int'];
-  name?: Maybe<Scalars['String']>;
-  numParts?: Maybe<Scalars['Int']>;
-  year?: Maybe<Scalars['Int']>;
+  name: Scalars['String'];
+  numParts: Scalars['Int'];
+  year: Scalars['Int'];
 };
 
 export type SetListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type SetListQuery = { __typename?: 'Query', allSets?: Array<{ __typename?: 'Set', id: number, name?: string | null, numParts?: number | null, year?: number | null } | null> | null };
+export type SetListQuery = { __typename?: 'Query', allSets: Array<{ __typename?: 'Set', id: number, name: string, numParts: number, year: number } | null> };
 
 export type AddSetMutationVariables = Exact<{
   name: Scalars['String'];
@@ -52,7 +52,7 @@ export type AddSetMutationVariables = Exact<{
 }>;
 
 
-export type AddSetMutation = { __typename?: 'Mutation', addSet?: { __typename?: 'Set', id: number, name?: string | null, numParts?: number | null, year?: number | null } | null };
+export type AddSetMutation = { __typename?: 'Mutation', addSet: { __typename?: 'Set', id: number, name: string, numParts: number, year: number } };
 
 
 export const SetListDocument = gql`

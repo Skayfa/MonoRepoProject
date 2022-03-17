@@ -1,7 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ApolloProvider, InMemoryCache, ApolloClient } from '@apollo/client';
-import React from 'react';
-import './app.css';
+import { SetForm, SetList } from '@nx-apollo-react-ex/feature-sets';
 
 const client = new ApolloClient({
   uri: 'http://localhost:3333/graphql',
@@ -11,6 +10,10 @@ const client = new ApolloClient({
 const App = () => (
   <ApolloProvider client={client}>
     <h1>My Lego Sets</h1>
+    <div className="flex">
+      <SetForm />
+      <SetList />
+    </div>
   </ApolloProvider>
 );
 
