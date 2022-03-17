@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "projects": {
+    "api": "apps/api",
+    "data-access": "libs/data-access",
+    "feature-sets": "libs/feature-sets",
+    "nx-apollo": "apps/nx-apollo",
+    "nx-apollo-e2e": "apps/nx-apollo-e2e"
+  }
+}
