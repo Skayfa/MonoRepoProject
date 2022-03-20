@@ -1,0 +1,11 @@
+{
+  "extends": "tsconfig/base.json",
+  "display": "Default",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
