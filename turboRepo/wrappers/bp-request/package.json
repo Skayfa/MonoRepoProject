@@ -24,5 +24,8 @@
   },
   "jest": {
     "preset": "scripts/jest/node"
+  },
+  "dependencies": {
+    "tsconfig": "workspace:*"
   }
 }
