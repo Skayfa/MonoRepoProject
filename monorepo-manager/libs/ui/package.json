@@ -1,0 +1,19 @@
+{
+  "name": "ui",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "esbuild src/*.js src/*.jsx --outdir=dist",
+    "dev": "esbuild src/*.js src/*.jsx --outdir=dist --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.14.27"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2"
+  },
+  "dependencies": {
+    "@emotion/css": "11.7.1"
+  }
+}
