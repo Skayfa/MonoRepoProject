@@ -33,9 +33,8 @@ export class UsersService {
         return this.users.find(u => u.userId === getUserArg.userId);
     }
     public getUsers(getUsersArgs: GetUsersArgs): User[] {
-
-        const pattern = 'sum';
-        const payload = [1, 2, 3];
+        // const pattern = 'sum';
+        // const payload = [1, 2, 3];
         // let x = this.client.emit<number>(pattern, payload)
         // console.log('x', x)
         // let y = this.client.send({ cmd: 'get_analytics' }, {});
