@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "workspaces": [
-    "apps/api",
+    "apps/*",
     "libs/*",
     "tools/*",
     "apps/services/*"
