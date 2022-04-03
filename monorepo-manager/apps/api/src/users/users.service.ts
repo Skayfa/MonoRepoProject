@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Inject, Injectable } from "@nestjs/common";
 import { CreateUserInput } from "./dto/input/create-user.input";
 import { User } from "./models/user";
 
@@ -7,10 +7,13 @@ import { UpdateUserInput } from "./dto/input/update-user.input";
 import { GetUsersArgs } from "./dto/args/get-users.args";
 import { GetUserArgs } from "./dto/args/get-user.args";
 import { DeleteUserInput } from "./dto/input/delete-user.input";
+import { ClientProxy } from "@nestjs/microservices";
 
 @Injectable()
 export class UsersService {
     private users: User[] = [];
+
+    constructor(@Inject('MATH_SERVICE') private readonly client: ClientProxy){}
 
     public createUser(createUserData: CreateUserInput): User {
         const user: User = {
@@ -30,6 +33,13 @@ export class UsersService {
         return this.users.find(u => u.userId === getUserArg.userId);
     }
     public getUsers(getUsersArgs: GetUsersArgs): User[] {
+
+        const pattern = 'sum';
+        const payload = [1, 2, 3];
+        // let x = this.client.emit<number>(pattern, payload)
+        // console.log('x', x)
+        // let y = this.client.send({ cmd: 'get_analytics' }, {});
+        // console.log('y', y)
         return getUsersArgs.userIds.map(userId => this.getUser({ userId }));
     }
     public deleteUser(deleteUserData: DeleteUserInput): User {

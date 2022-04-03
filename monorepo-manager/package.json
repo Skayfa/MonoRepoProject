@@ -10,9 +10,10 @@
   "author": "",
   "license": "ISC",
   "workspaces": [
-    "apps/*",
+    "apps/api",
     "libs/*",
-    "tools/*"
+    "tools/*",
+    "apps/services/*"
   ],
   "private": true,
   "devDependencies": {

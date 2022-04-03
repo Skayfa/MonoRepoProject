@@ -6,11 +6,11 @@ import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
-    UsersModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
+    UsersModule,
   ]
 })
 export class AppModule {}
