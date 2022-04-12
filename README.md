@@ -2,6 +2,10 @@
 
 Microservice app
 
+## Mono repository manager
+
+**Lerna**
+
 ## Stack
 
 ### Front :
