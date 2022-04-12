@@ -4,12 +4,12 @@ Microservice app
 
 ## Stack
 
-Front :
-  -- Mobile : React native
-  -- Web : React (next js)
+### Front :
+  * Mobile : React native
+  * Web : React (next js)
 
-Back End:
-  -- Api gateway: Graphql, Nestjs
-  -- Services: Nest js
+### Back End:
+  * Api gateway: Graphql, Nestjs
+  * Services: Nest js
   
-Language: Typescript
+### Language: Typescript
