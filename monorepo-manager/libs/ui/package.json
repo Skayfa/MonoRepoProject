@@ -1,19 +1,29 @@
 {
   "name": "ui",
   "version": "1.0.0",
-  "main": "dist/index.js",
   "license": "MIT",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
+  "files": [
+    "/lib"
+  ],
   "scripts": {
-    "build": "esbuild src/*.js src/*.jsx --outdir=dist",
-    "dev": "esbuild src/*.js src/*.jsx --outdir=dist --watch"
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+    "dev": "tsc -w"
   },
   "devDependencies": {
-    "esbuild": "^0.14.27"
+    "@types/react": "^18.0.2",
+    "@types/react-dom": "^18.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "typescript": "^4.2.4"
   },
   "peerDependencies": {
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "react-dom": "^18.0.0"
   },
-  "dependencies": {
-    "@emotion/css": "11.7.1"
-  }
+  "dependencies": {}
 }
