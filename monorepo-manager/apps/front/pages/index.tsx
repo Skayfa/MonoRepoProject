@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { Button } from 'ui'
+import { ToggleSwitch } from "awesome-component-library"
 import withApollo from '../lib/withApollo'
 
 const Home: NextPage = () => {
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Button />
+      <ToggleSwitch enabled={false} onChange={() => { }} />
 
       <footer className={styles.footer}>
         <a

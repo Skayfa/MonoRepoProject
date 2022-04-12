@@ -9,21 +9,28 @@
     "/lib"
   ],
   "scripts": {
-    "build": "yarn build:esm && yarn build:cjs",
+    "build": " yarn build:esm && yarn build:cjs && yarn run build:css",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+    "build:css": "tailwindcss -i ./src/styles/general.css -o ./lib/esm/styles/general.css  ./lib/cjs/styles/general.css --watch",
     "dev": "tsc -w"
   },
   "devDependencies": {
     "@types/react": "^18.0.2",
     "@types/react-dom": "^18.0.0",
+    "autoprefixer": "^10.4.4",
+    "postcss": "^8.4.12",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "tailwindcss": "^3.0.23",
     "typescript": "^4.2.4"
   },
   "peerDependencies": {
+    "autoprefixer": "^10.4.4",
+    "postcss": "^8.4.12",
     "react": "^17.0.2",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "tailwindcss": "^3.0.23"
   },
   "dependencies": {}
 }
