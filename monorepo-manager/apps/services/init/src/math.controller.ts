@@ -4,17 +4,16 @@ import { MathService } from './math.service';
 
 @Controller()
 export class MathController {
+  constructor(private readonly mathService: MathService) {}
 
-    constructor(private readonly mathService: MathService){}
+  @EventPattern('sum')
+  Test(data) {
+    this.mathService.test(data);
+  }
 
-    @EventPattern('sum')
-    Test(data) {
-        this.mathService.test(data);
-    }
-
-    @MessagePattern({ cmd: 'get_analytics' })
-    getAnalytics() {
-        console.log('ss')
-        return this.mathService.test2();
-    }
+  @MessagePattern({ cmd: 'get_analytics' })
+  getAnalytics() {
+    console.log('ss');
+    return this.mathService.test2();
+  }
 }

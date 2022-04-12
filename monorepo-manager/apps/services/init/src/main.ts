@@ -5,25 +5,24 @@ import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { AppModule } from './app.module';
 
 // Create logger
-const logger = new Logger("Main");
+const logger = new Logger('Main');
 
 // Options microservices
 const options: NestApplicationContextOptions & MicroserviceOptions = {
   transport: Transport.TCP,
   options: {
     port: 8800,
-    host: '127.0.0.1'
-  }
-}
-
+    host: '127.0.0.1',
+  },
+};
 
 async function bootstrap() {
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     AppModule,
-    options
+    options,
   );
   app.listen().then(() => {
-    logger.log("listing")
+    logger.log('listing');
   });
 }
 bootstrap();
